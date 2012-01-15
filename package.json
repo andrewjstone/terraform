@@ -1,0 +1,18 @@
+{
+  "author": "Andrew J. Stone <andrew.j.stone.1@gmail.com>",
+  "name": "terraform",
+  "description": "Simple Machine provisioning with Node.js",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewjstone/terraform.git"
+  },
+  "main": "lib/terraform.js",
+  "engines": {
+    "node": "~0.6"
+  },
+  "dependencies": {
+    "async": "*"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var cli = require('commander');
+
+cli
+  .version('0.0.1')
+  .option('-f', '--file', 'Run File')
+  .option('-r', '--root', 'Set the root of the filesystem - useful during test installs')
+  .parse(process.argv);
+
+var file = require(cli.file);
+file.run(cli.root || '/');
+
