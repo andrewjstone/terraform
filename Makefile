@@ -1,7 +1,7 @@
-.PHONY: clean
+.PHONY: clean test
 
 test: staged
-	node ./test/file.js
+	mocha ./test/file.js --reporter spec
 staged: 
 	cp -R test/proof/* test/staging/	
 	touch staged
