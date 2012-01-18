@@ -3,15 +3,15 @@ var File = terraform.File;
 var mocha = require('mocha');
 var assert = require('assert');
 
-// The actual file being tested
 var resolv_conf = new File('/etc/resolv.conf');
+var bashrc = new File('/home/ajs/.bashrc'); 
 
-describe('File', function() {
+describe('Modify /etc/resolv.conf', function() {
   it('should deploy without error', function(done){
     resolv_conf
-    .replaceln(/^nameserver.+$/, 'nameserver 10.10.6.4')
-    .writeln('search somebiz.com')
-    .deploy(done);
+      .replaceln(/^nameserver.+$/, 'nameserver 10.10.6.4')
+      .writeln('search somebiz.com')
+      .deploy(done);
   });
 
   it('should verify without error', function(done) {
@@ -23,3 +23,8 @@ describe('File', function() {
   });
 });
 
+describe('Install .bashrc', function() {
+  it('should install without error', function(done) {
+    bashrc.install(__dirname+'/proof/home/ajs/.bashrc', done);
+  });
+});
