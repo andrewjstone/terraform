@@ -25,6 +25,16 @@ describe('Modify /etc/resolv.conf', function() {
 
 describe('Install .bashrc', function() {
   it('should install without error', function(done) {
-    bashrc.install(__dirname+'/proof/home/ajs/.bashrc', done);
+    bashrc
+      .install(__dirname+'/proof/home/ajs/.bashrc')
+      .deploy(done);
+  });
+
+  it('should verify without error', function(done) {
+    bashrc.verify(function(err, result) {
+      if (err) return done(err);
+      assert.deepEqual(result.verified, true);
+      done();
+    });
   });
 });
