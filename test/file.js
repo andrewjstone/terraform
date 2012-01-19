@@ -1,7 +1,8 @@
-var terraform = require(__dirname+'/../lib/terraform')(__dirname+'/staging');
-var File = terraform.File;
 var mocha = require('mocha');
 var assert = require('assert');
+
+var terraform = require(__dirname+'/../lib/terraform')(__dirname+'/staging');
+var File = terraform.File;
 
 var resolv_conf = new File('/etc/resolv.conf');
 var bashrc = new File('/home/ajs/.bashrc'); 
