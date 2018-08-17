@@ -30,7 +30,7 @@ The above javascript will read in ```/home/ajs/test_root/etc/resolv.conf``` whic
 
 and write 
 
-    nameserver 10.10.10.6.4
+    nameserver 10.10.6.4
     search somebiz.com
    
 ## License
